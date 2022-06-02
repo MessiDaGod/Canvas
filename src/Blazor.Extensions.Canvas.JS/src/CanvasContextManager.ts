@@ -77,7 +77,7 @@ export class ContextManager {
     const result = this.prototypes[method].apply(context, args != undefined ? args.map((value) => this.deserialize(method, value)) : []);
 
     if (method == 'createPattern') {
-      const key = uuidv4(); 
+      const key = uuidv4();
       this.patterns.set(key, result);
       return key;
     }
